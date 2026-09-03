@@ -22,7 +22,7 @@ def main() -> int:
     skill = (ROOT / "SKILL.md").read_text(encoding="utf-8")
     if not skill.startswith("---\n") or "\nname:" not in skill or "\ndescription:" not in skill:
         errors.append("SKILL.md frontmatter is invalid")
-    if re.search(r"[A-Z]:\\Users\\[^\\\r\n]+\\|[A-Z]:\\(?:Codex|Godot)\\", skill, re.I):
+    if re.search(r"[A-Z]:\\Users\\(?!<[^>]+>\\)[^\\\r\n]+\\|[A-Z]:\\(?:Codex|Godot)\\", skill, re.I):
         errors.append("SKILL.md contains a private absolute path")
     if errors:
         print("\n".join(errors))
