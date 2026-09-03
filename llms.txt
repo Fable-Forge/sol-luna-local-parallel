@@ -1,0 +1,13 @@
+# Sol-Luna Local Parallel
+
+> Coordinate Sol-led, Luna-parallel work for non-overlapping local tasks.
+
+## Primary instructions
+
+- SKILL.md: https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/SKILL.md
+- Installation: https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/docs/install.md
+- Update: https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/docs/update.md
+
+## Install
+
+`npx skills add Fable-Forge/sol-luna-local-parallel`

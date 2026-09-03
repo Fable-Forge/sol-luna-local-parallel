@@ -1,0 +1,7 @@
+interface:
+  display_name: "Sol to Luna Local Parallel"
+  short_description: "Dispatch safe parallel work to local Luna tasks"
+  default_prompt: "Use $sol-luna-local-parallel to delegate independent work to Luna tasks."
+
+policy:
+  allow_implicit_invocation: true
