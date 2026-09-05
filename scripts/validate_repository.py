@@ -10,7 +10,6 @@ REQUIRED = [
     "SKILL.md", "README.md", "README.en.md", "docs/install.md", "docs/update.md",
     "docs/uninstall.md", "CHANGELOG.md", "CONTRIBUTING.md",
     "SECURITY.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "llms.txt",
-    ".github/FUNDING.yml",
 ]
 
 

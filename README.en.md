@@ -12,12 +12,11 @@
   <a href="https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0969da"></a>
   <img alt="Maturity: experimental" src="https://img.shields.io/badge/maturity-experimental-8250df">
   <img alt="Agents: Codex and Claude Code" src="https://img.shields.io/badge/agents-Codex_%C2%B7_Claude_Code-1f883d">
-  <a href="https://github.com/Fable-Forge/fableforge-agent-skills/blob/main/SUPPORT.md"><img alt="Sponsor FableForge" src="https://img.shields.io/badge/%E2%99%A5-support_FableForge-bf3989"></a>
 </p>
 
 </div>
 
-**[Use cases](#use-cases) · [Quick install](#quick-install) · [Compatibility](#compatibility) · [Validation](#validation) · [Support](https://github.com/Fable-Forge/fableforge-agent-skills/blob/main/SUPPORT.md) · [Contact](#contact)**
+**[Use cases](#use-cases) · [Quick install](#quick-install) · [Compatibility](#compatibility) · [Validation](#validation) · [Contact](#contact)**
 
 ---
 
@@ -64,10 +63,6 @@ Compatibility means the repository format and installation paths cover these Age
 ## Validation boundary
 
 Structural validation, installation visibility, real triggering, and final output quality are separate claims. Passing CI proves only the repository structure and static rules; a real Agent trigger still requires its own acceptance test.
-
-## ❤️ Support the author
-
-These skills are free, open source, and maintained over time. If this one saved you time, you can [support FableForge through Alipay or WeChat](https://github.com/Fable-Forge/fableforge-agent-skills/blob/main/SUPPORT.md). Support is voluntary and does not unlock hidden features, priority service, or commercial rights.
 
 <a id="contact"></a>
 ## Contact and collaboration

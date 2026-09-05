@@ -12,12 +12,11 @@
   <a href="https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0969da"></a>
   <img alt="Maturity: experimental" src="https://img.shields.io/badge/maturity-experimental-8250df">
   <img alt="Agents: Codex and Claude Code" src="https://img.shields.io/badge/agents-Codex_%C2%B7_Claude_Code-1f883d">
-  <a href="https://github.com/Fable-Forge/fableforge-agent-skills/blob/main/SUPPORT.md"><img alt="Sponsor FableForge" src="https://img.shields.io/badge/%E2%99%A5-support_FableForge-bf3989"></a>
 </p>
 
 </div>
 
-**[适用场景](#use-cases) · [快速安装](#quick-install) · [兼容性](#compatibility) · [验证边界](#validation) · [支持作者](https://github.com/Fable-Forge/fableforge-agent-skills/blob/main/SUPPORT.md) · [联系](#contact)**
+**[适用场景](#use-cases) · [快速安装](#quick-install) · [兼容性](#compatibility) · [验证边界](#validation) · [联系](#contact)**
 
 ---
 
@@ -64,10 +63,6 @@ npx skills add Fable-Forge/sol-luna-local-parallel
 ## 验证边界
 
 结构校验、安装可见、真实触发和最终产出质量是四件不同的事。CI 通过只能证明仓库结构和静态规则通过；真实 Agent 触发仍需单独验收。
-
-## ❤️ 支持作者
-
-这些 Skill 免费、开源，并会持续维护。如果它帮助你节省了时间，可以通过[支付宝或微信自愿支持](https://github.com/Fable-Forge/fableforge-agent-skills/blob/main/SUPPORT.md)。赞助不会解锁隐藏功能、优先支持或商业授权。
 
 <a id="contact"></a>
 ## 联系与合作
