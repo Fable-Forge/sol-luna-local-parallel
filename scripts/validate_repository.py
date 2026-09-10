@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
-    "SKILL.md", "README.md", "README.en.md", "docs/install.md", "docs/update.md",
+    "SKILL.md", "README.md", "README.zh-CN.md", "docs/install.md", "docs/update.md",
     "docs/uninstall.md", "CHANGELOG.md", "CONTRIBUTING.md",
     "SECURITY.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "llms.txt",
 ]
