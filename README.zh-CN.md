@@ -12,6 +12,11 @@
   <a href="https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0969da"></a>
   <img alt="Maturity: experimental" src="https://img.shields.io/badge/maturity-experimental-8250df">
   <img alt="Agents: Codex and Claude Code" src="https://img.shields.io/badge/agents-Codex_%C2%B7_Claude_Code-1f883d">
+  <a href="https://github.com/Fable-Forge/sol-luna-local-parallel/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Fable-Forge/sol-luna-local-parallel?style=social"></a>
+</p>
+
+<p>
+  <strong>如果这个 Skill 帮你理顺了 Sol–Luna 并行，欢迎点个 ⭐ —— 能够帮助更多人发现它。</strong>
 </p>
 
 </div>
