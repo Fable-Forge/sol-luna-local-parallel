@@ -6,7 +6,7 @@
 
 **Coordinate Sol-led, Luna-parallel work for non-overlapping local tasks.**
 
-> 在 Codex Desktop 中为写入范围互斥的任务组织 Sol 主导、Luna 并行执行。
+<p>在 Codex Desktop 中为写入范围互斥的任务组织 Sol 主导、Luna 并行执行。</p>
 
 <p>
   <a href="https://github.com/Fable-Forge/sol-luna-local-parallel/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-0969da"></a>
