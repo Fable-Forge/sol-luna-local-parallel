@@ -34,7 +34,7 @@ Use 2-3 concurrent Luna tasks. Do not exceed 3.
 
 1. List Codex projects and match the current saved project path exactly.
 2. Create one task per ownership row with:
-   - `model: gpt-5.6-luna`
+   - `model: gpt-6-luna`
    - `thinking: xhigh`
    - `target.type: project`
    - the matched `projectId`
@@ -75,7 +75,7 @@ Do not use `worktree`, `startingState`, branch creation, commits, stashes, or me
 | Two disjoint write sets | Create two local Luna desktop tasks |
 | Overlapping or shared file | Keep with Sol or run serially |
 | Git project | Still use `environment: local` |
-| Need a true Luna | Set `model: gpt-5.6-luna`; do not use internal subagent tools |
+| Need a true Luna | Set `model: gpt-6-luna`; do not use internal subagent tools |
 | Luna stops talking | Check thread state; do not infer completion from Stop Hook |
 | Scoped tests pass | Sol still runs combined verification |
 
