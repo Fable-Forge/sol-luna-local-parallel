@@ -22,6 +22,14 @@ Dispatch only when all conditions hold:
 
 Keep shared interfaces, entry points, project configuration, lock files, generated indexes, and cross-task integration with Sol. If only one safe task remains, do not create parallel Luna tasks.
 
+## Task Ownership Boundary
+
+- Maintain a delegation registry for this parent task: ownership row, `threadId`, `hostId`, requested model/reasoning, and exact title. Only successful `create_thread` results from this delegation enter the registry automatically. Preserve this registry across compaction and later rounds.
+- An existing conversation found by `list_threads` is not a worker, even if it shares the project, is idle, discusses the same feature, or has "Luna" in its title. Enroll an existing task only when the user explicitly identifies it and authorizes its participation; record that authorization and verify the model before treating it as Luna.
+- Before every `send_message_to_thread`, confirm the destination is in this registry and the message is within its assigned scope. This tool submits work and may start a turn; a request to "only report paths", "coordinate", or "avoid conflicts" is still an assignment, not a read-only query.
+- Inspect non-delegated tasks with `list_threads` / `read_thread` only when needed. Never wake, interrupt, retitle, switch models, or send coordination instructions to them under this skill. A user-authorized development plan does not transfer control of unrelated testing or development conversations.
+- If another task owns conflicting files, keep those files read-only and continue disjoint work. Defer the shared edit or ask the user when it is essential; do not recruit that task to obtain a handoff. If an out-of-scope message was already sent, disclose the error and stop further sends; do not send a correction, cancellation, or apology to that task without user authorization.
+
 ## Build the Ownership Table
 
 Before creation, make a private table with `task`, `allowed_write_paths`, `shared_read_only_paths`, `validation`, and `depends_on`.
@@ -34,13 +42,15 @@ Use 2-3 concurrent Luna tasks. Do not exceed 3.
 
 1. List Codex projects and match the current saved project path exactly.
 2. Create one task per ownership row with:
+   - explicit `title: "Luna <slot> · <concrete subtask>"`, for example `Luna A · 问答缺口与原题复测`; every worker title must begin with `Luna`
    - `model: gpt-6-luna`
    - `thinking: xhigh`
    - `target.type: project`
    - the matched `projectId`
    - `target.environment.type: local`
-3. Record each returned `threadId` and `hostId`. Never pass a `clientThreadId` to thread tools; resolve the ready thread through the task list if creation is still pending.
-4. Emit the created-task directive required by the desktop app when reporting created tasks.
+3. Record each returned `threadId` and `hostId` in the delegation registry. Never pass a `clientThreadId` to thread tools; resolve the ready thread through the task list if creation is still pending.
+4. Verify the created task's stored title. If normalization removed the prefix, use `set_thread_title` on that registered task only and verify again. Keep the `Luna` prefix during follow-ups and later title changes. A title is a visual label, not evidence of the actual model; model verification remains separate.
+5. Emit the created-task directive required by the desktop app when reporting created tasks.
 
 Do not use `worktree`, `startingState`, branch creation, commits, stashes, or merges.
 
@@ -61,7 +71,7 @@ Do not use `worktree`, `startingState`, branch creation, commits, stashes, or me
 ## Track and Accept
 
 - Wait on all created threads with `wait_threads`; carry forward each cursor and do not treat commentary or timeout as completion.
-- Read a task when it completes or needs attention. Send follow-up to the same thread for in-scope corrections.
+- Read a registered task when it completes or needs attention. Send follow-up to that same registered thread for in-scope corrections; recheck the registry before sending.
 - Never use the CLI Stop Hook or `.codex-worker.json` to determine desktop-task completion.
 - If a Luna needs another task's path, stop that task. Reassign only after the conflicting owner completes, or keep the shared change with Sol.
 - After all tasks report completion, compare the current workspace against the pre-dispatch baseline. Changed paths must be a subset of the union of assigned paths plus explicit Sol-owned integration paths.
@@ -99,4 +109,6 @@ Stop and correct the dispatch if any of these appear:
 - A prompt lacks exact allowed paths or validation.
 - More than three Luna tasks are active for one batch.
 - `spawn_agent` is being used as a substitute for an explicitly requested Luna.
+- A send/coordination target is absent from the delegation registry, or was selected merely because it shares the project.
+- A newly created Luna worker has no explicit `Luna` title prefix, or a pre-existing task is being relabeled to make it appear delegated.
 - Sol is about to finish before all thread states and combined verification are checked.
