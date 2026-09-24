@@ -1,6 +1,6 @@
 # Sol-Luna Local Parallel
 
-> Coordinate Sol-led, Luna-parallel work for non-overlapping local tasks.
+> Reuse verified Luna desktop tasks for independent local work while Sol controls file ownership and final acceptance.
 
 ## Primary instructions
 
